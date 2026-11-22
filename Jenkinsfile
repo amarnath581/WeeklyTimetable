@@ -17,7 +17,8 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh 'test -f index.html'
+                bat 'if not exist index.html exit /b 1'
+                echo 'HTML file exists'
             }
         }
 
@@ -28,4 +29,6 @@ pipeline {
             }
         }
     }
+}
+
 }
