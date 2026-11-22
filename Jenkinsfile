@@ -24,11 +24,9 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                archiveArtifacts 'index.html'
+                archiveArtifacts artifacts: 'index.html'
                 echo 'Deployment Successful'
             }
         }
     }
-}
-
 }
